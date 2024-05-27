@@ -25,13 +25,13 @@
 			
 			$self.data('countTo', data);
 			
-			// if an existing interval can be found, clear it first
+			
 			if (data.interval) {
 				clearInterval(data.interval);
 			}
 			data.interval = setInterval(updateTimer, settings.refreshInterval);
 			
-			// initialize the element with the starting value
+			
 			render(value);
 			
 			function updateTimer() {
@@ -45,7 +45,7 @@
 				}
 				
 				if (loopCount >= loops) {
-					// remove the interval
+					
 					$self.removeData('countTo');
 					clearInterval(data.interval);
 					value = settings.to;
@@ -80,14 +80,14 @@
 }(jQuery));
 
 jQuery(function ($) {
-  // custom formatting example
+ 
   $('.count-number').data('countToOptions', {
 	formatter: function (value, options) {
 	  return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
 	}
   });
   
-  // start all the timers
+  
   $('.timer').each(count);  
   
   function count(options) {
